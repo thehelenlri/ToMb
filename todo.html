@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Mb</title>
+    <link rel="shortcut icon" href="https://icons.veryicon.com/512/System/Button%20UI%20-%20Requests%20%235/ToDo%20List.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--script-->
+   <script src="todo.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        *{font-family: "Vazirmatn", system-ui;}
+    </style>
+</head>
+
+<nav class="bg-white border-gray-200 dark:bg-indigo-200">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse"><img src="https://icons.veryicon.com/512/System/Button%20UI%20-%20Requests%20%235/ToDo%20List.png" class="h-8" alt="Flowbite Logo" /><span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ToMb</span></a>
+        <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"><svg class="w-5 h-5 rounded-full me-3" aria-hidden="true"  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>English (US)</button>
+            <!-- Dropdown -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
+                <ul class="py-2 font-medium" role="none">
+                    <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem"><div class="inline-flex items-center"><svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full me-2"  id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>English (US)</div></a></li>
+                    <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem"><div class="inline-flex items-center"><svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"  id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>Deutsch</div></a></li>
+                    <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem"><div class="inline-flex items-center"><svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"  id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>Italiano</div></a></li>
+                    <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem"><div class="inline-flex items-center"><svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"  xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>中文 (繁體)</div></a></li>
+                </ul>
+            </div>
+            <button data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-language" aria-expanded="false">
+                <span class="sr-only">بازکنید</span>
+                <svg class="w-5 h-5" aria-hidden="true"  fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-indigo-200 dark:border-gray-700">
+                <li><a href="todo.html" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-sky-600 md:p-0 md:dark:text-sky-600" aria-current="page">خانه</a></li>
+                <li><a href="todolist.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-600 dark:text-white md:dark:hover:text-sky-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">تودولیست</a></li>
+                <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-600 dark:text-white md:dark:hover:text-sky-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">خدمات</a></li>
+                <li><a href="aboutus.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-600 dark:text-white md:dark:hover:text-sky-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">درباره‌ما</a></li>
+                <li><a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-600 dark:text-white md:dark:hover:text-sky-600 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">ارتباط با ما</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a class="group flex flex-col focus:outline-none" href="#">
+            <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
+                <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" src="https://i.pinimg.com/736x/9a/8c/1d/9a8c1d34ed88e14ec84683d0eab95462.jpg" alt="Blog Image"><span class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">اسپانسر</span>
+            </div>
+
+            <div class="mt-7">
+                <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-black">پیروزی حتمی</h3>
+                <p class="mt-3 text-gray-800 dark:text-neutral-800">با اراده آهنین و تلاش بی‌پایان، هیچ چیزی نمی‌تواند مانع رسیدن به موفقیت در ورزش شود.</p>
+                <p class="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:text-black font-medium dark:text-blue-500">بیشتر بخوانید
+                    <svg class="shrink-0 size-4"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><path d="m9 18 6-6-6-6"/></svg></p>
+            </div>
+        </a>
+
+        <a class="group flex flex-col focus:outline-none" href="#">
+            <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
+                <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" src="https://i.pinimg.com/736x/ae/f5/67/aef5676b29c645beb4cbca94b38dc3b4.jpg" alt="Blog Image">
+            </div>
+
+            <div class="mt-7">
+                <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-black">موفقیت حتمی</h3>
+                <p class="mt-3 text-gray-800 dark:text-neutral-800">هر گامی که در مسیر پیشرفت برمی‌داریم، به امید پیروزی نزدیک‌تر می‌شویم.</p>
+                <p class="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:text-black  font-medium dark:text-blue-500">بیشتر بخوانید
+                    <svg class="shrink-0 size-4"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><path d="m9 18 6-6-6-6"/></svg></p>
+            </div>
+        </a>
+
+        <a class="group relative flex flex-col w-full min-h-60 bg-[url('https://i.pinimg.com/736x/de/bc/03/debc0301d67defe8e9d76999ecd4e4f5.jpg')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition" href="#">
+            <div class="flex-auto p-4 md:p-6">
+                <h3 class="text-xl text-white/90 group-hover:text-black"><span class="font-bold">لنی ریا </span> مطبوعات کتابهایی در مورد پیشرفت اقتصادی و فناوری منتشر می کنند..</h3>
+            </div>
+            <div class="pt-0 p-4 md:p-6">
+                <div class="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-black/70 group-focus:text-white/70">به سایت مراجعه کنید
+                    <svg class="shrink-0 size-4"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><path d="m9 18 6-6-6-6"/></svg>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Swiper Container -->
+<div class="swiper-container relative overflow-hidden">
+    <div class="swiper-wrapper max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+        <!-- Swiper Slide -->
+        <div class="swiper-slide">
+            <div aria-hidden="true" class="flex -z-[1] absolute start-0">
+                <div class="bg-sky-200 opacity-20 blur-3xl w-[1036px] h-[300px] dark:bg-indigo-200 dark:opacity-20"></div>
+            </div>
+
+            <div class="lg:grid lg:grid-cols-6 lg:gap-8 lg:items-center">
+                <div class="hidden lg:block lg:col-span-2">
+                    <img class="rounded-3xl" src="https://edu.gg.go.kr/repository/uploadfiles/sangsang/2041471_565.jpg" alt="Avatar">
+                </div>
+
+
+                <div class="lg:col-span-4">
+                    <div>
+                        <img src="https://icons.veryicon.com/512/System/Button%20UI%20-%20Requests%20%235/ToDo%20List.png" class=" h-8 mb-4" alt="" srcset="">
+                        <p class="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal dark:text-neutral-400">با تست MBTI می‌تونی شخصیت خودت رو بهتر بشناسی و بفهمی چطور به دنیا واکنش نشون می‌دی. این تست به تو کمک می‌کنه تا روابط شخصی و حرفه‌ای بهتری داشته باشی.</p>
+                        <div class="mt-6">
+                            <div class="flex items-center">
+                                <div class="lg:hidden shrink-0">
+                                    <img class="size-12 rounded-full" src="https://cdn.prod.website-files.com/62ee0bbe0c783a903ecc0ddb/66da317609d155e07bf56f9c_66da314dbcacecb226873d67_amp%2520workout%2520library.%2520Courtesy%2520-%2520amp%2520-%25206e.png" alt="Avatar">
+                                </div>
+                                <div class="ms-4 lg:ms-0">
+                                    <p class="font-medium text-gray-800 dark:text-neutral-500">تست شخصیت شناسی</p>
+                                    <a class="text-m text-black-600 dark:text-neutral-600" href="#">همین حالا شخصیتت را پیدا کن!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+        <h2 class="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-800">ابزارها را کاوش کنید</h2>
+        <p class="mt-3 text-gray-800 dark:text-neutral-800">تم قدرتمند و انعطاف پذیر برای انواع کسب و کارها.</p>
+    </div>
+
+    <div class="mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8">
+        <div class="col-span-6 sm:col-span-4 text-center">
+            <svg class="mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-neutral-800"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4"/><path d="M8 18h.01"/></svg>
+            <div class="mt-2 sm:mt-6">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-800">ریسپانسیو</h3>
+            </div>
+        </div>
+
+        <div class="col-span-6 sm:col-span-4 text-center">
+            <svg class="mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-neutral-800"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+            <div class="mt-2 sm:mt-6">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-800">تنظیمات</h3>
+            </div>
+        </div>
+
+        <div class="col-span-6 col-start-4 sm:col-span-4 text-center">
+            <svg class="mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-neutral-800"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+            <div class="mt-2 sm:mt-6">
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-neutral-800">پشتیبانی 24 ساعته</h3>
+            </div>
+        </div>
+    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+    <div class="mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8">
+        <div class="swiper-slide hidden md:block col-span-4 md:col-span-3">
+            <img class="rounded-xl" src="https://i.pinimg.com/736x/99/2e/a5/992ea5c9be7a08d3b62395a9e15f88ed.jpg" alt="Features Image">
+        </div>
+        <div class="swiper-slide col-span-4 md:col-span-3">
+            <img class="rounded-xl" src="https://i.pinimg.com/736x/63/92/58/6392586511d8bdee9a16fb6d825b4cfe.jpg" alt="Features Image">
+        </div>
+
+        <div class="swiper-slide col-span-4 md:col-span-3">
+            <img class="rounded-xl" src="https://i.pinimg.com/736x/2a/e8/eb/2ae8eb20015428a0fa63d058cfa217c2.jpg" alt="Features Image">
+        </div>
+
+        <div class="swiper-slide col-span-4 md:col-span-3">
+            <img class="rounded-xl" src="https://i.pinimg.com/736x/b5/bc/5d/b5bc5d57f51f5a0a09c2af1edf064558.jpg" alt="Features Image">
+        </div>
+
+    </div>
+</div>
+        <div class="swiper-button-next text-pink-400"></div>
+        <div class="swiper-button-prev text-pink-400"></div>
+
+    </div>
+</div>
+<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+        <div>
+            <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-black">برنامه ریزی خود را به <span class="text-pink-200">لنی ریا </span> بسپارید</h1>
+            <p class="mt-3 text-lg text-gray-800 dark:text-neutral-400">«برنامه‌ریزی منظم، مسیر موفقیت را هموار می‌کند.»</p>
+            <div class="mt-7 grid gap-3 w-full sm:inline-flex">
+                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent dark:bg-indigo-200 text-white hover:bg-blue-700 focus:outline-none focus:dark:bg-indigo-200 disabled:opacity-50 disabled:pointer-events-none" href="todolist.html">برنامه های خود را تنظیم کنید!<svg class="shrink-0 size-4"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
+                <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="#">تماس با ما</a>
+            </div>
+            <div class="mt-6 lg:mt-10 grid grid-cols-2 gap-x-5">
+                <div class="py-5">
+                    <div class="flex gap-x-1">
+                        <img class="size-18" src="https://cdn-icons-png.flaticon.com/512/156/156855.png" alt="" srcset="">
+                    </div>
+                    <p class="mt-3 text-sm text-gray-800 dark:text-neutral-800"><span class="font-bold">4.6</span> /5 - از 12 هزار بررسی</p>
+                </div>
+                <div class="py-5">
+                    <div class="flex gap-x-1">
+                        <img class="size-18" src="https://cdn-icons-png.flaticon.com/512/156/156855.png" alt="" srcset="">
+                    </div>
+                    <p class="mt-3 text-sm text-gray-800 dark:text-neutral-800"><span class="font-bold">4.8</span> /5 - از 5 هزار بررسی</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative ms-4">
+            <img class="w-full rounded-md" src="https://i.pinimg.com/736x/0f/e5/4e/0fe54e7d6e47eb29b8efdf6aadd31ff3.jpg" alt="nature">
+            <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-sky-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-sky-200 dark:via-neutral-700/0 dark:to-sky-700/0"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mx-auto mt-8 max-w-2xl mb-8 lg:mb-14 text-center">
+    <h2 class="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-800">ورزشکاران</h2>
+    <p class="mt-3 text-gray-800 dark:text-neutral-800">تم قدرتمند و انعطاف پذیر برای انواع کسب و کارها.</p>
+</div>
+
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div class="space-y-2">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/99/2e/a5/992ea5c9be7a08d3b62395a9e15f88ed.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/1d/58/95/1d5895c44bc855aaf66cd2ec7bdfea22.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/d4/80/9e/d4809e3091ac0f28f8172051d8b344c2.jpg" alt="Gallery Masonry Image">
+        </div>
+        <div class="space-y-2">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/7f/99/5e/7f995ea268104ea32931a772dd4940f8.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/8b/a7/f5/8ba7f5462ffd39af91dc10c62977c2c8.jpg" alt="Gallery Masonry Image">
+        </div>
+        <div class="space-y-2">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/21/3a/2d/213a2d72572cda63f71a42eb802d4529.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/73/dc/aa/73dcaa875497227fff5adbe290ce7ce7.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/e5/33/b3/e533b334509d303446f42fe7ba761db8.jpg" alt="Gallery Masonry Image">
+        </div>
+        <div class="space-y-2">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/6a/1d/ed/6a1ded9e577b172ebfd3acc4f6f6c999.jpg" alt="Gallery Masonry Image">
+            <img class="w-full h-auto object-cover" src="https://i.pinimg.com/736x/54/61/dd/5461dde6bd1cbaa279c447d1d11b4f21.jpg" alt="Gallery Masonry Image">
+        </div>
+    </div>
+</div>
+
+<!-- Pricing -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Title -->
+    <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h2 class="text-2xl font-bold md:text-4xl md:leading-tight dark:text-black">اشتراک</h2>
+        <p class="mt-1 text-gray-600 dark:text-neutral-400">وضعیت شما هر چه باشد، پیشنهادات ما مطابق با نیازهای شما تکامل می یابد.</p>
+    </div>
+    <!-- End Title -->
+
+    <!-- Grid -->
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:items-center">
+        <!-- Card -->
+        <div class="flex flex-col bg-gradient-to-tr from-blue-100 via-blue-200 to-indigo-300 size-full border border-gray-200 text-center rounded-xl p-8 dark:border-slate-400 hover:dark:border-pink-300 hover:shadow-lg">
+            <h4 class="font-medium text-lg text-black-800 dark:text-neutral-200">رایگان</h4>
+            <span class="mt-7 font-bold text-5xl text-gray-800 dark:text-neutral-400">رایگان</span>
+            <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">رایگان برای همیشه</p>
+            <ul class="mt-7 space-y-2.5 text-sm">
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">1 کاربرد</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">ویژگی‌های برنامه‌ریزی</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">پشتیبانی محصول</span></li>
+            </ul>
+            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:hover:bg-sky-100 " href="#">Sign up</a>
+        </div>
+
+        <div class="flex flex-col bg-gradient-to-tr from-indigo-100 via-blue-200 to-blue-300 border border-gray-200 text-center rounded-xl p-8 dark:border-slate-400 hover:dark:border-pink-300 hover:shadow-lg">
+            <h4 class="font-medium text-lg text-gray-800 dark:text-neutral-200">تیم</h4>
+            <span class="mt-7 font-bold text-5xl text-gray-800 dark:text-neutral-400">
+        <span class="font-bold text-2xl -me-2">$  </span>89</span>
+            <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">هر آنچه برای یک کسب و کار رو به رشد نیاز دارید</p>
+            <ul class="mt-7 space-y-2.5 text-sm">
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400"  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">5 کاربر</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">ویژگی‌های برنامه‌ریزی</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">پشتیبانی محصول</span></li>
+            </ul>
+            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:hover:bg-sky-100" href="#">Sign up</a>
+        </div>
+
+        <div class="flex flex-col bg-gradient-to-tr from-blue-200 via-blue-100 to-indigo-100 border border-gray-200 text-center rounded-xl p-8 dark:border-slate-400 hover:dark:border-pink-300 hover:shadow-lg">
+            <h4 class="font-medium text-lg text-gray-800 dark:text-neutral-200">تیم</h4>
+            <span class="mt-7 font-bold text-5xl text-gray-800 dark:text-neutral-400">
+        <span class="font-bold text-2xl -me-2">$  </span>89</span>
+            <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">هر آنچه برای یک کسب و کار رو به رشد نیاز دارید</p>
+            <ul class="mt-7 space-y-2.5 text-sm">
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">5 کاربر</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">ویژگی‌های برنامه‌ریزی</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">پشتیبانی محصول</span></li>
+            </ul>
+            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:hover:bg-sky-100" href="#">Sign up</a>
+        </div>
+        <div class="flex flex-col bg-gradient-to-tr from-blue-100 via-blue-100 to-indigo-200 border border-gray-200 text-center rounded-xl p-8 dark:border-slate-400 hover:dark:border-pink-300 hover:shadow-lg">
+            <h4 class="font-medium text-lg text-gray-800 dark:text-neutral-200">سازمانی</h4>
+            <span class="mt-7 font-bold text-5xl text-gray-800 dark:text-neutral-400">
+        <span class="font-bold text-2xl -me-2">$  </span>149</span>
+            <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">ویژگی های پیشرفته برای افزایش مقیاس کسب و کار شما</p>
+            <ul class="mt-7 space-y-2.5 text-sm">
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">10 کاربر</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">ویژگی‌های برنامه‌ریزی</span></li>
+                <li class="flex gap-x-2">
+                    <svg class="shrink-0 mt-0.5 size-4 text-blue-600 dark:text-pink-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ><polyline points="20 6 9 17 4 12"/></svg>
+                    <span class="text-gray-800 dark:text-neutral-400">پشتیبانی محصول</span></li>
+            </ul>
+            <a class="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:hover:bg-sky-100" href="#">Sign up</a>
+        </div>
+    </div>
+</div>
+
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="grid lg:grid-cols-2 gap-6">
+        <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+            <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                <img class="size-full absolute top-0 start-0 object-cover" src="https://static.wikia.nocookie.net/aesthetics/images/8/82/Runningexercise.jpeg/revision/latest?cb=20201229002343 " alt="Blog Image">
+            </div>
+
+            <div class="grow">
+                <div class="p-4 flex flex-col h-full sm:p-6">
+                    <div class="mb-3">
+                        <p class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-neutral-200">ورزشکاران</p>
+                    </div>
+                    <h3 class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-black dark:group-focus:text-black">ورزش تنها بدن را تقویت نمی‌کند، بلکه ذهن را هم آماده چالش‌های زندگی می‌سازد</h3>
+                    <p class="mt-2 text-gray-600 dark:text-neutral-400">ورزش، جایی است که تلاش امروز، پیروزی فردا را رقم می‌زند.</p>
+
+                    <div class="mt-5 sm:mt-auto">
+                        <div class="flex items-center">
+                            <div class="shrink-0">
+                                <img class="size-[46px] rounded-full" src="https://thenewinquiry.com/app/uploads/2013/05/Mens-Triathlon-Hyde-Park-7812.-175mm-lens-11600-f8-ISO-400.The-triathlon-is-one-of-the-most-brutal-sports-of-the-games-and-you-can-pretty-muchguarantee-that-some-of-the-finishers-will-collapse-in-exhaustion-at-the-finishin.jpeg" alt="Avatar">
+                            </div>
+                            <div class="ms-2.5 sm:ms-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-neutral-200">دینا مرادی</h4>
+                                <p class="text-xs text-gray-500 dark:text-neutral-500">مارچ 15, 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+            <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                <img class="size-full absolute top-0 start-0 object-cover" src="https://red-s.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fjx36t14djajy%2F2NZ3GCe4THMBmnqH6wLBjl%2F394270903c05d5448942481779aecef9%2Forca-T4boPYGF-vA-unsplash.jpg&w=3840&q=75" alt="Blog Image">
+            </div>
+            <div class="grow">
+                <div class="p-4 flex flex-col h-full sm:p-6">
+                    <div class="mb-3">
+                        <p class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-neutral-800 dark:text-neutral-200">ورزشکاران ایرانی</p>
+                    </div>
+                    <h3 class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-black dark:group-focus:text-black">ورزش نه تنها قدرت بدنی، بلکه اراده و استقامت روحی را نیز می‌سازد</h3>
+                    <p class="mt-2 text-gray-600 dark:text-neutral-400">با هر تمرین در ورزش، یک قدم به بهترین نسخه خود نزدیک‌تر می‌شویم.</p>
+
+                    <div class="mt-5 sm:mt-auto">
+                        <!-- Avatar -->
+                        <div class="flex items-center">
+                            <div class="shrink-0">
+                                <img class="size-[46px] rounded-full" src="https://global.discourse-cdn.com/tnation/original/4X/0/a/f/0af38d2ff5451eb02670f77fc846ef90c0c92057.jpeg" alt="Avatar">
+                            </div>
+                            <div class="ms-2.5 sm:ms-4">
+                                <h4 class="font-semibold text-gray-800 dark:text-neutral-200">محمد آریایی </h4>
+                                <p class="text-xs text-gray-500 dark:text-neutral-500">آپریل 4, 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<footer class="relative overflow-hidden dark:bg-indigo-200">
+    <div class="relative z-10">
+        <div class="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
+            <div class="inline-flex items-center">
+                <img src="https://icons.veryicon.com/512/System/Button%20UI%20-%20Requests%20%235/ToDo%20List.png" class="h-8">
+                <div class="border-s border-neutral-700 ps-5 ms-5">
+                    <p class="text-sm text-neutral-400">© 2025 Leni-Ria ruls.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--    <script>-->
+<!--        // Disable right-click-->
+<!--        document.oncontextmenu = (e) => {-->
+<!--          e.preventDefault();  // Prevent the context menu-->
+<!--          return false;-->
+<!--        }-->
+
+<!--        // Disable F12 key (DevTools) and Ctrl + U (View Source)-->
+<!--        document.onkeydown = (e) => {-->
+<!--          // Disable F12-->
+<!--          if (e.key === "F12") {-->
+<!--            e.preventDefault();-->
+<!--            e.stopPropagation();-->
+<!--            return false;-->
+<!--          }-->
+
+<!--            document.onkeydown = function(e) {-->
+<!--                if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.-->
+<!--                    // alert('not dud');-->
+<!--                }-->
+<!--                return false;-->
+<!--            };-->
+
+<!--          // You can add more key event checks here if needed-->
+<!--        }-->
+
+<!--    </script>-->
+</body>
+
+</html>
