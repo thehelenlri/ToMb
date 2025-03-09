@@ -1,0 +1,182 @@
+*{
+    font-family: "Vazirmatn", system-ui;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 600;
+
+}
+body{
+    background: url("images/mountain.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+
+
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    background: rgb(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);
+}
+.regular-txt{
+    font-weight: 400;
+}
+.main-container{
+    width: 400px;
+    height: 496px;
+    z-index: 1;
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255,0.15));
+    border-radius: 12px;
+    backdrop-filter: blur(100px);
+    padding: 20px;
+    justify-content: space-between;
+}
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%; /* اطمینان از استفاده از عرض کامل */
+    display: flex;
+    justify-content: space-between; /* فضای بین ورودی و دکمه */
+    align-items: center; /* مرکز عمودی */
+}
+
+.city-input {
+    width: 100vh;
+    padding: 10px 16px;
+    border-radius: 99px;
+    border: 3px solid transparent;
+    background: rgb(0, 0, 0, 0.15);
+    outline: none;
+    font-weight: 500;
+    transition: 0.25s border;
+    direction: rtl;
+}
+
+.city-input:focus {
+    border: 3px solid rgb(0, 0, 0, 0.15);
+}
+
+.city-input::placeholder {
+    color: rgb(255, 255, 255, 0.75);
+}
+
+/* دکمه جستجو */
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    left: 16px; /* دکمه را در سمت راست قرار می‌دهد */
+    top: 50%; /* دکمه را عمودی مرکز می‌کند */
+    transform: translateY(-50%); /* برای مرکزچین شدن دکمه */
+    display: flex; /* برای قرار دادن متن و آیکون کنار هم */
+    align-items: center; /* برای وسط‌چین کردن عمودی */
+}
+
+/* اسپن داخل دکمه */
+.search-btn span {
+    margin-right: 8px; /* فاصله بین آیکون و متن */
+}
+.weather-info{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.location-date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.location{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+.weather-summery-container{
+    /*border: solid;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.weather-summery-img{
+    /*border: solid;*/
+    width: 120px;
+    height: 120px;
+}
+.weather-summery-info{
+    text-align: end;
+}
+.humid{
+    height: 40px;
+    width: 40px;
+}
+.weather-conditions-container{
+    display: flex;
+    justify-content: space-between;
+}
+.condition-item{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.forecast-item-container{
+    display: flex;
+    gap: 16px;
+    padding-bottom: 12px;
+}
+.forecast-item-container ::-webkit-scrollbar{
+    height: 8px;
+}
+.forecast-item-container::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+.forecast-item-container::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+}
+.forecast-item{
+    min-width: 70px;
+    background: rgb(255, 255,255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 12px;
+    transition: 0.3s background;
+
+}
+.forecast-item:hover{
+    background: rgb(255, 255, 255, 0.15);
+}
+.forecast-item-img{
+    width: 35px;
+    height: 35px;
+
+}
+.section-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+
+}
+.section-message img{
+    height: 180px;
+    width: fit-content;
+}
