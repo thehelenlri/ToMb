@@ -6,3 +6,7 @@ var swiper = new Swiper('.mySwiper', {
     },
 // سایر گزینه‌های Swiper که ممکن است نیاز داشته باشید مانند slidesPerView، spaceBetween و غیره
 });
+document.getElementById('dropdown-toggle').addEventListener('click', function() {
+    const menu = document.getElementById('navbar-language');
+    menu.classList.toggle('hidden'); // Toggle visibility
+});
